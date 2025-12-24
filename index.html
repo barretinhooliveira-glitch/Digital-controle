@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Controle Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Controle Digital</h1>
+</header>
+
+<nav>
+  <button onclick="mostrar('produtos')">Produtos</button>
+  <button onclick="mostrar('pedido')">Pedido</button>
+  <button onclick="mostrar('estoque')">Estoque</button>
+</nav>
+
+<section id="produtos" class="tela">
+  <h2>Produtos</h2>
+  <div id="listaProdutos"></div>
+</section>
+
+<section id="pedido" class="tela hidden">
+  <h2>Novo Pedido</h2>
+  <p>Em construção</p>
+</section>
+
+<section id="estoque" class="tela hidden">
+  <h2>Estoque</h2>
+  <p>Em construção</p>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
