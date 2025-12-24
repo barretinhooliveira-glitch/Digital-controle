@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Controle Digital</title>
 
-  <!-- Estilo -->
   <link rel="stylesheet" href="style.css">
 
   <!-- jsPDF -->
@@ -38,10 +37,18 @@
     <h3>Novo Pedido</h3>
 
     <label>Cliente</label>
-    <input type="text" id="cliente" placeholder="Nome do cliente">
+    <input id="cliente" placeholder="Nome do cliente">
+
+    <label>Categoria</label>
+    <select id="categoriaSelect"></select>
 
     <label>Produto</label>
     <select id="produtoSelect"></select>
+
+    <p style="margin-top:10px;font-size:14px;">
+      <strong>Custo da caixa:</strong> R$ <span id="custoCaixa">0.00</span><br>
+      <strong>Custo unitário:</strong> R$ <span id="custoUnitario">0.00</span>
+    </p>
 
     <label>Tipo de venda</label>
     <select id="tipoVenda">
@@ -76,12 +83,10 @@
 <section id="estoque" class="tela hidden">
   <div class="card">
     <h3>Estoque</h3>
-    <p>Controle de estoque será exibido aqui.</p>
+    <p>Em breve</p>
   </div>
 </section>
 
-<!-- Script principal -->
 <script src="app.js"></script>
-
 </body>
 </html>
