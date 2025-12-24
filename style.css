@@ -30,9 +30,9 @@ nav {
 nav button {
   flex: 1;
   padding: 14px;
-  font-size: 14px;
   border: none;
   background: none;
+  font-size: 14px;
 }
 
 nav button:active {
@@ -41,14 +41,13 @@ nav button:active {
 
 .tela {
   padding: 16px;
-  padding-bottom: 80px;
+  padding-bottom: 90px;
 }
 
 .hidden {
   display: none;
 }
 
-/* Cards */
 .card {
   background: #ffffff;
   border-radius: 10px;
@@ -57,12 +56,6 @@ nav button:active {
   box-shadow: 0 2px 6px rgba(0,0,0,0.06);
 }
 
-.card h3 {
-  margin: 0 0 6px;
-  font-size: 15px;
-}
-
-/* Inputs */
 label {
   display: block;
   margin-top: 12px;
@@ -79,7 +72,6 @@ input, select {
   font-size: 15px;
 }
 
-/* Botões principais */
 button.primario {
   margin-top: 16px;
   width: 100%;
@@ -92,6 +84,7 @@ button.primario {
   font-weight: 600;
 }
 
-button.primario:active {
-  background: #256428;
+.custos {
+  margin-top: 10px;
+  font-size: 14px;
 }
