@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Controle Digital</title>
 
   <link rel="stylesheet" href="style.css">
@@ -22,15 +22,13 @@
   <button onclick="mostrar('estoque')">Estoque</button>
 </nav>
 
-<!-- PRODUTOS -->
 <section id="produtos" class="tela">
   <div class="card">
-    <h3>Produtos</h3>
+    <h3>Resumo de Produtos</h3>
     <div id="listaProdutos"></div>
   </div>
 </section>
 
-<!-- PEDIDO -->
 <section id="pedido" class="tela hidden">
 
   <div class="card">
@@ -45,12 +43,12 @@
     <label>Produto</label>
     <select id="produtoSelect"></select>
 
-    <p style="margin-top:10px;font-size:14px;">
-      <strong>Custo da caixa:</strong> R$ <span id="custoCaixa">0.00</span><br>
+    <p class="custos">
+      <strong>Custo caixa:</strong> R$ <span id="custoCaixa">0.00</span><br>
       <strong>Custo unitário:</strong> R$ <span id="custoUnitario">0.00</span>
     </p>
 
-    <label>Tipo de venda</label>
+    <label>Tipo</label>
     <select id="tipoVenda">
       <option value="caixa">Caixa</option>
       <option value="unitario">Unitário</option>
@@ -67,7 +65,6 @@
 
   <div class="card">
     <h3>Itens do Pedido</h3>
-
     <ul id="listaItens"></ul>
 
     <p><strong>Total:</strong> R$ <span id="totalPedido">0.00</span></p>
@@ -79,7 +76,6 @@
 
 </section>
 
-<!-- ESTOQUE -->
 <section id="estoque" class="tela hidden">
   <div class="card">
     <h3>Estoque</h3>
