@@ -73,19 +73,20 @@ document.addEventListener("DOMContentLoaded", function () {
   // ================== CUSTOS ==================
   function atualizarCustos() {
     const produto = categorias[categoriaSelect.value][produtoSelect.value];
-    document.getElementById("custoCaixa").textContent = produto.custo_caixa.toFixed(2);
+    document.getElementById("custoCaixa").textContent =
+      produto.custo_caixa.toFixed(2);
     document.getElementById("custoUnitario").textContent =
       (produto.custo_caixa / produto.unidades).toFixed(2);
   }
 
   produtoSelect.addEventListener("change", atualizarCustos);
 
+  // inicializa selects
   atualizarProdutos();
 
   // ================== PEDIDO ==================
   let itensPedido = [];
-
-  window.adicionarItem = function () {
+    window.adicionarItem = function () {
     const produto = categorias[categoriaSelect.value][produtoSelect.value];
     const tipo = document.getElementById("tipoVenda").value;
     const qtd = Number(document.getElementById("quantidade").value);
@@ -102,7 +103,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const total = precoVenda * qtd;
     const lucro = (precoVenda - custo) * qtd;
 
-    itensPedido.push({ produto: produto.nome, tipo, qtd, total, lucro });
+    itensPedido.push({
+      produto: produto.nome,
+      tipo,
+      qtd,
+      total,
+      lucro
+    });
+
     atualizarPedido();
   };
 
@@ -126,10 +134,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   window.salvarPedido = function () {
-    if (!document.getElementById("cliente").value) {
-      alert("Informe o cliente");
+    const cliente = document.getElementById("cliente").value;
+    if (!cliente) {
+      alert("Informe o nome do cliente");
       return;
     }
+
     alert("Pedido salvo!");
     itensPedido = [];
     atualizarPedido();
@@ -145,16 +155,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const doc = new jsPDF();
     let y = 10;
 
+    doc.setFontSize(14);
     doc.text("PEDIDO", 10, y);
     y += 10;
 
     itensPedido.forEach(item => {
-      doc.text(`${item.qtd}x ${item.produto} - R$ ${item.total.toFixed(2)}`, 10, y);
+      doc.text(
+        `${item.qtd}x ${item.produto} - R$ ${item.total.toFixed(2)}`,
+        10,
+        y
+      );
       y += 6;
     });
 
-    doc.text(`Total: R$ ${document.getElementById("totalPedido").textContent}`, 10, y + 6);
-    doc.text(`Lucro: R$ ${document.getElementById("lucroPedido").textContent}`, 10, y + 12);
+    doc.text(
+      `Total: R$ ${document.getElementById("totalPedido").textContent}`,
+      10,
+      y + 6
+    );
+    doc.text(
+      `Lucro: R$ ${document.getElementById("lucroPedido").textContent}`,
+      10,
+      y + 12
+    );
 
     doc.save("pedido.pdf");
   };
