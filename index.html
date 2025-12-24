@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Controle Digital</title>
-  <link rel="stylesheet" href="style.css">
-</head>
 <body>
 
 <header>
-  <h1>Controle Digital</h1>
+  Controle Digital
 </header>
 
 <nav>
@@ -19,20 +11,55 @@
 </nav>
 
 <section id="produtos" class="tela">
-  <h2>Produtos</h2>
-  <div id="listaProdutos"></div>
+  <div class="card">
+    <h3>Produtos</h3>
+    <div id="listaProdutos"></div>
+  </div>
 </section>
 
 <section id="pedido" class="tela hidden">
-  <h2>Novo Pedido</h2>
-  <p>Em construção</p>
+
+  <div class="card">
+    <h3>Novo Pedido</h3>
+
+    <label>Cliente</label>
+    <input id="cliente" placeholder="Nome do cliente">
+
+    <label>Produto</label>
+    <select id="produtoSelect"></select>
+
+    <label>Tipo</label>
+    <select id="tipoVenda">
+      <option value="caixa">Caixa</option>
+      <option value="unitario">Unitário</option>
+    </select>
+
+    <label>Quantidade</label>
+    <input type="number" id="quantidade" value="1">
+
+    <label>Preço de venda</label>
+    <input type="number" id="precoVenda" placeholder="R$">
+
+    <button class="primario" onclick="adicionarItem()">Adicionar item</button>
+  </div>
+
+  <div class="card">
+    <h3>Itens</h3>
+    <ul id="listaItens"></ul>
+    <p><strong>Total:</strong> R$ <span id="totalPedido">0.00</span></p>
+    <p><strong>Lucro:</strong> R$ <span id="lucroPedido">0.00</span></p>
+
+    <button class="primario" onclick="salvarPedido()">Salvar Pedido</button>
+  </div>
+
 </section>
 
 <section id="estoque" class="tela hidden">
-  <h2>Estoque</h2>
-  <p>Em construção</p>
+  <div class="card">
+    <h3>Estoque</h3>
+    <p>Em breve</p>
+  </div>
 </section>
 
 <script src="app.js"></script>
 </body>
-</html>
